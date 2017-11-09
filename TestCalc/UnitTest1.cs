@@ -9,6 +9,7 @@ using TestStack.White.UIItems.Finders;
 
 namespace TestCalc
 {
+    [Ignore]
     [TestClass]
     public class UnitTest1
     {
