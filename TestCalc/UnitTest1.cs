@@ -9,11 +9,10 @@ using TestStack.White.UIItems.Finders;
 
 namespace TestCalc
 {
-    [Ignore]
     [TestClass]
     public class UnitTest1
     {
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("text_a", true)]
         [DataRow("text_b", true)]
         [DataRow("text_op", true)]
