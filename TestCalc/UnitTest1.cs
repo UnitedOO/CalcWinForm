@@ -98,28 +98,28 @@ namespace TestCalc
             application.Kill();
         }
 
-        [DataTestMethod]
-        [DataRow("11", "7", "p", "18")]
-        [DataRow("14", "3", "-", "11")]
-        [DataRow("15", "6", "*", "90")]
-        [DataRow("80", "20", "/", "4")]
-        public void Calc_RealJob(string a, string b, string op, string exp)
-        {
-            Application application = Application.Launch(new ProcessStartInfo(@"CalcWinForm.exe")
-            {
-                WorkingDirectory = @"..\..\..\CalcWinForm\bin\Debug\",
-            });
-            Window window = application.GetWindows()[0];
+        //[DataTestMethod]
+        //[DataRow("11", "7", "p", "18")]
+        //[DataRow("14", "3", "-", "11")]
+        //[DataRow("15", "6", "*", "90")]
+        //[DataRow("80", "20", "/", "4")]
+        //public void Calc_RealJob(string a, string b, string op, string exp)
+        //{
+        //    Application application = Application.Launch(new ProcessStartInfo(@"CalcWinForm.exe")
+        //    {
+        //        WorkingDirectory = @"..\..\..\CalcWinForm\bin\Debug\",
+        //    });
+        //    Window window = application.GetWindows()[0];
 
-            window.Get<TextBox>(SearchCriteria.ByAutomationId("text_a")).SetValue(a);
-            window.Get<TextBox>(SearchCriteria.ByAutomationId("text_b")).SetValue(b);
-            window.Get<TextBox>(SearchCriteria.ByAutomationId("text_op")).SetValue(op);
-            window.Get<Button>(SearchCriteria.ByAutomationId("btn_res")).Click();
-            string res = window.Get<TextBox>(SearchCriteria.ByAutomationId("text_res")).Text;
+        //    window.Get<TextBox>(SearchCriteria.ByAutomationId("text_a")).SetValue(a);
+        //    window.Get<TextBox>(SearchCriteria.ByAutomationId("text_b")).SetValue(b);
+        //    window.Get<TextBox>(SearchCriteria.ByAutomationId("text_op")).SetValue(op);
+        //    window.Get<Button>(SearchCriteria.ByAutomationId("btn_res")).Click();
+        //    string res = window.Get<TextBox>(SearchCriteria.ByAutomationId("text_res")).Text;
 
-            application.Kill();
-            Assert.AreEqual(exp, res);
-        }
+        //    application.Kill();
+        //    Assert.AreEqual(exp, res);
+        //}
     }
 
 
